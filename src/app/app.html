@@ -67,3 +67,21 @@
     <h2>No employees to display</h2>
   }
 </div>
+
+<br/>
+<hr/>
+<div class="container">
+  <label>Enter your age : </label>
+  <input type="text" (input)="checkEligibility()"
+  [(ngModel)]="age" />
+  <div>
+    @switch (isEligible) {
+       @case (true){
+        <p>You are eligible to vote</p>
+       }
+       @default {
+       <p>You are not eligible to vote</p>
+       }
+    }
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 interface empInterface {
   id: number;
@@ -10,7 +11,7 @@ interface empInterface {
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -29,7 +30,7 @@ export class App {
    employees = signal<empInterface[]>([
      {id: 1, name: 'Hester Shaw', role: 'Admin'},
      {id: 2, name: 'Tom Natsworthy', role: 'HR'},
-     {id: 3, name: 'Beauregard Pennyroyal', role: 'Marketing'},
+     {id: 3, name: 'Nimrod Pennyroyal', role: 'Marketing'},
      {id: 4, name: 'Anna Fang', role: 'Developer'},
      {id: 5, name: 'Wren Natsworthy', role: 'Marketing'},
    ]);
@@ -37,6 +38,12 @@ export class App {
   toggleEmployees() {
     this.showEmployees = !this.showEmployees;
   }
+
+   age : number = 0;
+   isEligible : boolean = false;  
+   checkEligibility(){
+     this.isEligible = this.age >= 18;
+   }
 
   fullStackDev = [{
     id: 1,
