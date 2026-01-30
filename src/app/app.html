@@ -36,11 +36,146 @@
 <hr/>
 <br/>
 <div>
-  <button (click)="toggleEmployees()">Display Employees</button>
+  <h2>Role Selection</h2>
+  <select [(ngModel)]="employeeRole">
+    <option value="">Select Role</option>
+    <option value="Admin">Admin</option>
+    <option value="HR">HR</option>
+    <option value="Marketing">Marketing</option>
+    <option value="Developer">Developer</option>
+    <option value="Analyst">Analyst</option>
+  </select>
+
+   @switch(employeeRole){
+     @case('Admin'){
+       <h2>List of Employees</h2>
+       <h3>Selected Role: Admin</h3>
+       <table>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Role</td>
+          </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees(); track $index){
+               @if(emp.role === "Admin"){
+                <tr>
+                  <td>{{emp.id}}</td>
+                  <td>{{emp.name}}</td>
+                  <td>{{emp.role}}</td>
+                </tr>
+               }
+             }
+        </tbody>
+       </table>
+     }
+     @case('HR'){
+       <h2>List of Employees</h2>
+       <h3>Selected Role: HR</h3>
+       <table>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Role</td>
+          </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees(); track $index){
+               @if(emp.role === "HR"){
+                <tr>
+                  <td>{{emp.id}}</td>
+                  <td>{{emp.name}}</td>
+                  <td>{{emp.role}}</td>
+                </tr>
+               }
+             }
+        </tbody>
+       </table>
+     }
+     @case('Marketing'){
+       <h2>List of Employees</h2>
+       <h3>Selected Role: HR</h3>
+       <table>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Role</td>
+          </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees(); track $index){
+               @if(emp.role === "Marketing"){
+                <tr>
+                  <td>{{emp.id}}</td>
+                  <td>{{emp.name}}</td>
+                  <td>{{emp.role}}</td>
+                </tr>
+               }
+             }
+        </tbody>
+       </table>
+     }
+     @case('Developer'){
+       <h2>List of Employees</h2>
+       <h3>Selected Role: HR</h3>
+       <table>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Role</td>
+          </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees(); track $index){
+               @if(emp.role === "Developer"){
+                <tr>
+                  <td>{{emp.id}}</td>
+                  <td>{{emp.name}}</td>
+                  <td>{{emp.role}}</td>
+                </tr>
+               }
+             }
+        </tbody>
+       </table>
+     }
+     @case('Analyst'){
+       <h2>List of Employees</h2>
+       <h3>Selected Role: HR</h3>
+       <table>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Role</td>
+          </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees(); track $index){
+               @if(emp.role === "Analyst"){
+                <tr>
+                  <td>{{emp.id}}</td>
+                  <td>{{emp.name}}</td>
+                  <td>{{emp.role}}</td>
+                </tr>
+               }
+             }
+        </tbody>
+       </table>
+     } @default {
+        <h3>Please select a role</h3>
+     }
+
+   }
+</div>
+  <!-- <button (click)="toggleEmployees()">Display Employees</button>
   
   @if(showEmployees){
-  
-<div>
+  <div>
   <h2>List of Employees</h2>
   <table>
     <thead>
@@ -66,10 +201,12 @@
   } @else {
     <h2>No employees to display</h2>
   }
-</div>
+</div> -->
 
 <br/>
+<br/>
 <hr/>
+<br/>
 <div class="container">
   <label>Enter your age : </label>
   <input type="text" (input)="checkEligibility()"

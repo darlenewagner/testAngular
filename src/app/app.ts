@@ -27,12 +27,20 @@ export class App {
    }
 
    showEmployees : boolean = true;
+   
+   employeeRole: string = '';
+   
    employees = signal<empInterface[]>([
      {id: 1, name: 'Hester Shaw', role: 'Admin'},
      {id: 2, name: 'Tom Natsworthy', role: 'HR'},
      {id: 3, name: 'Nimrod Pennyroyal', role: 'Marketing'},
      {id: 4, name: 'Anna Fang', role: 'Developer'},
      {id: 5, name: 'Wren Natsworthy', role: 'Marketing'},
+     {id: 6, name: 'Freya Rasmussen', role: 'Marketing'},
+     {id: 7, name: 'Theo Ngoni', role: 'Developer'},
+     {id: 8, name: 'Piotr Masgard', role: 'Analyst'},
+     {id: 9, name: 'Nicola Quercus', role: 'Developer'},
+     {id: 10, name: 'Wavey Godshawk', role: 'Analyst'},
    ]);
 
   toggleEmployees() {
