@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Container } from './container/container';
 
 interface empInterface {
   id: number;
@@ -9,9 +10,11 @@ interface empInterface {
   role: string;
 }
 
+
+
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, FormsModule],
+  imports: [CommonModule, RouterOutlet, FormsModule, Container],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -32,7 +35,26 @@ export class App {
 
   nm : string = '';
   em : string = '';
-  
+  emailIsValid : boolean = false;
+  formSubmitted : boolean = false;
+
+  checkEmailValidation(em : string) : void{
+    if ( em.includes('@') && (em.includes('.com') || em.includes('.org'))){
+      this.emailIsValid = true;
+    } else{
+      this.emailIsValid = false;
+    }
+  }
+
+  showMessage(){
+    if(this.nm && this.emailIsValid){
+      this.formSubmitted = true;
+    }else{
+      this.formSubmitted = false;
+    }
+
+  }
+
   toggleMode(){
     if(this.colorMode === 'lightMode'){
        this.colorMode = 'darkMode';

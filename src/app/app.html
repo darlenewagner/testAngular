@@ -1,4 +1,7 @@
-<!-- @if(displayTest){
+ <app-container></app-container>
+ <br/>
+ <br/>
+ <!-- @if(displayTest){
  <div>
    Hi, I'm inside a structural directive!
  </div>
@@ -32,6 +35,7 @@
   <div>Here's another division element.</div>
 } -->
 
+@if(!formSubmitted){
 <form>
   <h2>Submit Form</h2>
   <div class="form-group">
@@ -42,12 +46,17 @@
 
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" name="email" [(ngModel)]="em" required/>
+    <input type="email" name="email" [(ngModel)]="em" required
+    [ngStyle]="{'background-color' : emailIsValid ? '#009900' : '#ffb6c1'}" 
+    (input)="checkEmailValidation(em)" required/>
   </div>
 
-  <button class="anotherButton" type="submit">Submit</button>
+  <button class="anotherButton" type="submit" (click)="showMessage()">Submit</button>
 </form>
-
+}
+@if(formSubmitted){
+       <p>Form is successfully submitted.</p>
+   }
 <br/>
 <hr/>
 <br/>

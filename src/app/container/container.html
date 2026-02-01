@@ -1,0 +1,16 @@
+<!-- <ng-container *ngFor="let subject of subjectList">
+    <div>
+        <span style="margin-right: 5px; font-size: 20px;">Subject Code : {{subject.subCode}},</span>
+        <span style="font-size: 20px;">Subject Name : {{subject.name}}</span>
+    </div>
+</ng-container> -->
+
+
+<div *ngIf="isAuthorized; else notAuthorized">
+    <h2>Authorized User</h2>
+</div>
+ 
+<ng-template #notAuthorized>
+    <h2>Not Authorized</h2>
+</ng-template>
+
