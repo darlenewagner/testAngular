@@ -21,6 +21,25 @@ export class App {
   displayTest:boolean = true;
   number = 20;
   displayElement : boolean = true;
+  colorMode = 'lightMode';
+
+  // For use with [ngStyle]
+  applyVal = {
+     color : 'darkgreen',
+     'font-size' : '35px',
+     'font-style' : 'italic',
+  };
+
+  nm : string = '';
+  em : string = '';
+  
+  toggleMode(){
+    if(this.colorMode === 'lightMode'){
+       this.colorMode = 'darkMode';
+     } else {
+      this.colorMode = 'lightMode';
+     }
+  }
 
   show(){
     this.displayElement = !this.displayElement;

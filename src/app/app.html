@@ -1,10 +1,10 @@
-@if(displayTest){
+<!-- @if(displayTest){
  <div>
    Hi, I'm inside a structural directive!
  </div>
 }
 
-<!-- <ul>
+ <ul>
    @if(number > 0){
        <li>{{number}} is greater than 0.</li>
      }
@@ -14,14 +14,14 @@
     @if(number < 0){
        <li>{{number}} is less than 0.</li>
     }
-</ul> -->
+</ul> 
 
 <button (click)="showList = !showList">Show List</button>
 @if(showList){
   <ul>
      <li *ngFor="let item of listItems" style="margin-bottom: 15px;">{{item.name}} is {{item.age}} years old.</li>
   </ul>
-}
+} 
 
 <br/>
 <hr/>
@@ -30,7 +30,23 @@
 <br/><br/>
 @if(displayElement){
   <div>Here's another division element.</div>
-}
+} -->
+
+<form>
+  <h2>Submit Form</h2>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" [(ngModel)]="nm" 
+    [ngStyle]="{'background-color' : nm ? '#009900' : '#ffb6c1'}" required/>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" [(ngModel)]="em" required/>
+  </div>
+
+  <button class="anotherButton" type="submit">Submit</button>
+</form>
 
 <br/>
 <hr/>
@@ -207,7 +223,12 @@
 <br/>
 <hr/>
 <br/>
-<div class="container">
+<div style="text-align: center;">
+  <h2 [ngStyle]="applyVal">Example of [ngStyle] directive</h2>
+</div>
+
+
+<!-- <div class="container">
   <label>Enter your age : </label>
   <input type="text" (input)="checkEligibility()"
   [(ngModel)]="age" />
@@ -221,11 +242,16 @@
        }
     }
   </div>
-</div>
+</div> -->
+
+<br/>
+<hr/>
+<br/>
 
 <!--  Testing Light Mode and Dark Mode -->
+<button class="myButton" (click)="toggleMode()">{{colorMode === 'lightMode' ? 'Switch To Dark Mode' : 'Switch To Light Mode'}}</button>
 
-<div class="box">
+<div class="box" [ngClass]="colorMode">
   <h2>Light Mode</h2>
   <p>
     Her lips were red, her looks were free,
@@ -234,7 +260,7 @@
   </p>
 </div>
 
-<div class="box">
+<div class="box" [ngClass]="colorMode">
   <h2>Dark Mode</h2>
   <p>
     Where lies the strangling fruit that came from the hand of the sinner
