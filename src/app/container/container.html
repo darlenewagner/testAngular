@@ -5,7 +5,12 @@
     </div>
 </ng-container> -->
 
-<div class="box">
+<ng-template #showMe let-person>
+    <p style="font-size: 20px;">My name is {{person.name}}, I am {{person.age}} years old, and I live in {{person.city}}.</p>
+</ng-template>
+<ng-container *ngTemplateOutlet="showMe; context : {$implicit : personObj}"></ng-container>
+
+<!-- <div class="box">
     <div class="input-container">
         <input type="text" [(ngModel)]="user"/>
         <label for="">Full Name</label>
@@ -14,7 +19,7 @@
     <ng-template #notValid>
         <h3>Please enter your name</h3>
     </ng-template>
-</div>
+</div> -->
 
 
 <!-- <div *ngIf="isAuthorized; else notAuthorized">

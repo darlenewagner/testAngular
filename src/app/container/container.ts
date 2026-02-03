@@ -12,6 +12,18 @@ import { FormsModule } from '@angular/forms';
 export class Container {
   isAuthorized : boolean = false;
   user : string = '';
+  
+  a = 24;
+  b = 14;
+  calc(){
+    return this.a*this.b;
+  }
+
+  personObj = {
+    name : 'Darlene',
+    age : '51',
+    city : 'Atlanta',
+  }
 
   subjectList = [
     {
