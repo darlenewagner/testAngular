@@ -25,6 +25,12 @@ export class Container {
     city : 'Atlanta',
   }
 
+  employees = [
+    {id : 101, name : 'Seamus', salary : 45000},
+    {id : 102, name : 'Jedediah', salary : 50000},
+    {id : 102, name : 'Elia', salary : 65000}
+  ];
+
   subjectList = [
     {
       subCode : 101,
