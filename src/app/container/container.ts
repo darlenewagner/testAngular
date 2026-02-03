@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class Container {
   isAuthorized : boolean = false;
+  user : string = '';
 
   subjectList = [
     {
