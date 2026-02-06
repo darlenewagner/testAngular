@@ -33,6 +33,14 @@ export class App {
      'font-style' : 'italic',
   };
 
+  onMouseOver() {
+    this.applyVal.color = 'red';
+  }
+
+  onMouseOut() {
+    this.applyVal.color = 'darkgreen';
+  }
+
   nm : string = '';
   em : string = '';
   emailIsValid : boolean = false;
