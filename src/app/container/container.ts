@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgTemplateOutlet } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-container',
-  imports: [CommonModule, RouterOutlet, FormsModule],
+  imports: [CommonModule, NgTemplateOutlet, RouterOutlet, FormsModule],
   templateUrl: './container.html',
   styleUrl: './container.css',
+  template: `<ng-template [ngTemplateOutlet]="template"></ng-template>`,
+  
 })
 export class Container {
+  // @Input() template?: TemplateRef<any>;
   isAuthorized : boolean = false;
   user : string = '';
   
