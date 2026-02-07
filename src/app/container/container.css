@@ -51,3 +51,16 @@ h3{
     font-size: 12px;
 
 }
+
+.myTable {
+    text-align: center;
+    margin: 0 auto; 
+    font-size: 20px;
+    width: 30pc;
+    border: 1px solid black;
+}
+
+.myRow:hover{
+   background-color: yellow;
+   border: 1px solid #444;
+}

@@ -11,13 +11,13 @@
 <ng-container *ngTemplateOutlet="showMe; context : {$implicit : personObj}"></ng-container> -->
 
 <ng-template #employeeTable let-emp>
-    <table border="1" style="text-align: center; font-size: 20px; margin: 0 auto;">
+    <table class="myTable">
         <tr>
             <th>Id</th>
             <th>Name</th>
             <th>Salary</th>
         </tr>
-        <tr *ngFor="let e of emp">
+        <tr class="myRow" *ngFor="let e of emp">
             <td>{{e.id}}</td>
             <td>{{e.name}}</td>
             <td>{{e.salary}}</td>
