@@ -290,9 +290,18 @@
 </div>
 
 
- <ng-template>
+ <ng-template #catPicture let-path>
    <table class="pictureFrame">
-    <tr><td><img src="assets/images/IMG_1122.JPG" alt="Black_Cat"></td></tr>
+    <tr><td>
+      <div *ngIf="path.endsWith('.jpg') || path.endsWith('.JPG')">
+          <img style="vertical-align: middle;" [src]="path" alt="Image preview" width="300" />
+      </div>
+      <!-- <img src="assets/images/IMG_1122.JPG" alt="Black_Cat"> -->
+    </td></tr>
     </table>
  </ng-template>
+
+ <ng-container *ngFor="let filePath of files">
+    <ng-container *ngTemplateOutlet="catPicture; context: {$implicit: filePath}"></ng-container>
+  </ng-container>
   

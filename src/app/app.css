@@ -53,3 +53,21 @@ input{
     transition: .3s ease-in-out;
     letter-spacing: 0.2em;
 }
+
+.pictureFrame{
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    margin: 0 auto; 
+    font-size: 20px;
+    width: 300px;
+    border: 1px solid black;
+}
+
+.pictureFrame td{
+    vertical-align: middle;
+}
+
+.pictureFrame:hover{
+        border: 3px solid black;
+}

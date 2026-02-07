@@ -20,6 +20,11 @@ interface empInterface {
 })
 export class App {
   //protected readonly title = signal('testAngular');//
+  
+  files: string[] = [
+    './assets/images/IMG_1122.JPG'
+  ];
+
   title = 'testAngular';
   displayTest:boolean = true;
   number = 20;
