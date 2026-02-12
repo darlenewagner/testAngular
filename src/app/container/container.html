@@ -14,16 +14,20 @@
 
 <ng-template #employeeTable let-emp>
     <table class="myTable">
+        <thead>
         <tr>
             <th>Id</th>
             <th>Name</th>
             <th>Salary</th>
         </tr>
+        </thead>
+        <tbody>
         <tr class="myRow" *ngFor="let e of emp">
             <td>{{e.id}}</td>
             <td>{{e.name}}</td>
             <td>{{e.salary}}</td>
         </tr>
+        </tbody>
     </table>
 </ng-template>
 
