@@ -1,8 +1,9 @@
-import { Component, signal, ViewChild } from '@angular/core';
+import { Component, signal, ViewChild, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Container } from './container/container';
+import { Test } from './test/test';
 
 interface empInterface {
   id: number;
@@ -14,11 +15,16 @@ interface empInterface {
 
 @Component({
   selector: 'app-root',
-  imports: [ CommonModule, RouterOutlet, FormsModule, Container ],
+  imports: [ CommonModule, RouterOutlet, FormsModule, Container, Test],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+
 export class App {
+
+  inputValue: string = 'Initial Value';
+
+
   //protected readonly title = signal('testAngular');//
   
   files: string[] = [
